@@ -2,8 +2,8 @@
 // If the string has an odd length, you should return exactly one character. If the string has an even length,
 //  you should return exactly two characters.
 function centerOf(string){
-    const middleIndex = Math.floor(string.length / 2) - 1;
-    return string.length % 2 === 0 ? string.slice(middleIndex, middleIndex + 2) : string.charAt(middleIndex+1);
+    const middleIndex = Math.floor(string.length / 2) ;
+    return string.length % 2 === 0 ? string.slice(middleIndex-1, middleIndex + 1) : string.charAt(middleIndex);
 }
 // asdFghj 6 -> 2-3
 // 3

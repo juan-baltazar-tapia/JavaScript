@@ -10,7 +10,7 @@ function xor(valueOne, valueTwo){
     //console.log((valueOne || valueTwo) !== false);
     // If x can be converted to true, returns x; else, returns y.
     // Checks if the or operator returns false, else it is true
-    return !(valueOne == valueTwo) && ((valueOne || valueTwo) !== false)
+    return Boolean(valueOne) !== Boolean(valueTwo)
 }
 
 
@@ -20,3 +20,5 @@ console.log(xor(1, 1) === false);         // true
 console.log(xor(true, true) === false);   // true
 console.log(xor(0, false) === false);     // true
 console.log(xor(0, 0) === false);         // true
+console.log(xor(1, 2));     // Returns true (should be false - both are truthy)
+console.log(xor("a", "b")); // Returns true (should be false - both are truthy)

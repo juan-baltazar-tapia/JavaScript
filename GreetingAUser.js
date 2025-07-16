@@ -3,7 +3,7 @@
 const prompt = require('prompt-sync')();
 const userInput = prompt('Hello, what is your name?');
 if (userInput[userInput.length-1] === "!"){
-    const name = userInput.slice(0,userInput.length-1).toUpperCase();
+    const name = userInput.slice(0,-1).toUpperCase();
     console.log(`HELLO ${name}, WHY ARE WE SCREAMING?`)
 } else {
     console.log(`Hello ${userInput}`)

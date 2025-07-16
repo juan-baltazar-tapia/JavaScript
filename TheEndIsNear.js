@@ -5,7 +5,6 @@
 // You may assume that the input String will always contain at least two words.
 function penultimate(string){
     const stringArray = string.split(' ');
-    //console.log(stringArray.slice(-2,-1)[0])
     return stringArray.slice(-2,-1)[0]
 }
 

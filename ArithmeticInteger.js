@@ -5,7 +5,7 @@
 
 const prompt = require('prompt-sync')();
 const firstNumber = Number(prompt('Enter the first number: '));
-const secondNumber = Number(prompt('Enter the second nymber: '));
+const secondNumber = Number(prompt('Enter the second number: '));
 console.log(`${firstNumber} + ${secondNumber} = ${firstNumber + secondNumber}`);
 console.log(`${firstNumber} - ${secondNumber} = ${firstNumber - secondNumber}`);
 console.log(`${firstNumber} * ${secondNumber} = ${firstNumber * secondNumber}`);

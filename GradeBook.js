@@ -14,13 +14,13 @@ function getGrade(a,b,c){
 
     if (90 <= score && score <= 100){
         return 'A';
-    } else if (80 <= score && score < 90) {
+    } else if (80 <= score ) {
         return 'B';
-    } else if (70 <= score && score < 80) {
+    } else if (70 <= score) {
         return 'C';
-    } else if (60 <= score  && score<  70 ) {
+    } else if (60 <= score ) {
         return 'D';
-    } else if (0 <= score && score < 60) {
+    } else if (0 <= score) {
         return 'F';
     } else {
         return 'Invalid Score'

@@ -16,12 +16,13 @@ function wordSizes(string){
     if (string.length === 0){
         return {};
     }
-    const words = string.split(' ')
+
     const object = {}
-    for (let i = 0; i<words.length; i++){
-        let cleanWordLength = cleanWord(words[i]);
-        object[cleanWordLength.toString()] = (object[cleanWordLength.toString()] || 0)  + 1;
-    }
+
+    string.split(' ').forEach(word => {
+        object[cleanWord(word).toString()] = (object[cleanWord(word).toString()] || 0) + 1;
+    });
+    
     return object;
 }
 

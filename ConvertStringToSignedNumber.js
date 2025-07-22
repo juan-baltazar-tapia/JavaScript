@@ -14,11 +14,7 @@ function stringToInteger(string) {
     
     string.split('').forEach((num,index) => {
         let currSum;
-        if (num === '+') {
-            currSum = 0;
-        } else {
-            currSum = digit(num) * (10 ** (string.length - index - 1))
-        }
+        currSum = digit(num) * (10 ** (string.length - index - 1))
         //console.log(currSum)
         sum += currSum
     });
@@ -30,7 +26,10 @@ function digit(char) {
 }
 
 function stringToSignedInteger(string){
-    return string.charAt(0) === '-' ? (0 - stringToInteger(string.slice(1))) : stringToInteger(string)
+    const sign = string.chartAt(0)
+    const unsignedDigit = (sign === '-' || sign === '+') ? string.slice(1) : string;
+
+    return sing === '-' ? -(stringToInteger(unsignedDigit)) : stringToInteger(unsignedDigit)
 }
 
 console.log(stringToSignedInteger("4321") === 4321); // logs true

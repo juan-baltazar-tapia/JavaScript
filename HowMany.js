@@ -4,7 +4,7 @@
 function countOccurrences(array){
     const map = new Map();
     array.forEach(element => {
-        map.set(element, map.get(element) ? map.get(element) + 1 : 1)
+        map.set(element, (map.get(element) ?? 0) + 1)
     });
     return map
 }

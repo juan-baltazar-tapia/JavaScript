@@ -9,15 +9,23 @@
 //Disregard Daylight Savings and Standard Time and other complications.
 
 function timeOfDay(number){
+    if (number === 0){
+        return "00:00";
+    }
     const MINUTESINADAY = 1440;
     //all values are converted to a valid range — even negatives
-    const time = 1440 + (number % 1440)
-    const hourDecimal = time / 60;
-    const hourDecString = (Math.floor(hourDecimal) % 24).toString();
-    const minuteDecString = (time % 60).toString();
-    const hour = hourDecString.length < 2 ? '0' + hourDecString : hourDecString;
-    const minute = minuteDecString.length < 2 ? '0' + minuteDecString : minuteDecString;
-    return `${hour}:${minute}`
+    const time = ((number % MINUTESINADAY) + MINUTESINADAY) % MINUTESINADAY;
+    const hour = Math.floor(time / 60);
+    const minute = time % 60
+    // const hourDecimal = time / 60;
+    // const hourDecString = (Math.floor(hourDecimal) % 24).toString();
+    // const minuteDecString = (time % 60).toString();
+    // const hour = hourDecString.length < 2 ? '0' + hourDecString : hourDecString;
+    // const minute = minuteDecString.length < 2 ? '0' + minuteDecString : minuteDecString;
+    const paddedHour = hour.toString().padStart(2, '0');
+    const paddedMinute = minute.toString().padStart(2, '0');
+    console.log(`${paddedHour}:${paddedMinute}`)
+    return `${paddedHour}:${paddedMinute}`
 }
 
 console.log(timeOfDay(0) === "00:00");

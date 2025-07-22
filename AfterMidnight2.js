@@ -5,18 +5,16 @@
 //  respectively. Both functions should return a value in the range 0..1439.
 
 //You may not use javascript's Date class methods.
+function parseTime(string){
+    const [hour, minute] = string.split(':').map(Number)
+    return hour * 60 + minute;
+}
 function afterMidnight(string){
-    const hour = string[0] === '0' ? Number(string[1]) : Number(string.slice(0,2))
-    const minute = string[3] === '0' ? Number(string[4]) : Number(string.slice(3))
-    const totalMinute = hour * 60 + minute
-    return totalMinute % 1440;
+    return parseTime(string) % 1440;
 }
 
 function beforeMidnight(string){
-    const hour = string[0] === '0' ? Number(string[1]) : Number(string.slice(0,2))
-    const minute = string[3] === '0' ? Number(string[4]) : Number(string.slice(3))
-    
-    return (1440 - (hour * 60 + minute)) % 1440
+    return (1440 - parseTime(string)) % 1440
 }
 console.log(afterMidnight("00:00") === 0);
 console.log(beforeMidnight("00:00") === 0);

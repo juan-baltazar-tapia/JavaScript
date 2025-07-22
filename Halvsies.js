@@ -3,12 +3,10 @@
 //  and put the second half in the second element. If the original array contains an odd number of elements, 
 // place the middle element in the first half array.
 function halvsies(array){
-
-    let array1 = [];
-    let array2 = [];
-    array.forEach((element, index) => {
-        index < array.length/2 ? array1.push(element) : array2.push(element);
-    });
+    const midPoint = Math.ceil(array.length / 2);
+    let array1 = array.slice(0, midPoint);
+    let array2 = array.slice(midPoint);
+   
     return [array1, array2]
 
 

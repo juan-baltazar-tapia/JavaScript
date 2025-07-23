@@ -3,7 +3,7 @@
 
 //You may assume that a word is any sequence of non-whitespace characters.
 function wordCap(string){
-    return string.split(' ').map((string) => (string.charAt(0).toUpperCase() + string.slice(1))).join(' ');
+    return string.split(' ').map((string) => (string.charAt(0).toUpperCase() + string.slice(1).toLowerCase())).join(' ');
 }
 
 console.log(wordCap('four score and seven'));       // "Four Score And Seven"

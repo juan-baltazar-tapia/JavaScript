@@ -14,13 +14,13 @@ function rotateRightmostDigits(number, count){
     const countStringArray = numberString.slice(numberString.length - count).split('')
     const secondHalfArray = rotateArray(countStringArray)
     const firstHalf = numberString.slice(0,numberString.length - count )
-    return(firstHalf + secondHalfArray.join(''))
+    return(Number(firstHalf + secondHalfArray.join('')))
 }
 
 
-rotateRightmostDigits(735291, 1);      // 735291
-rotateRightmostDigits(735291, 2);      // 735219
-rotateRightmostDigits(735291, 3);      // 735912
-rotateRightmostDigits(735291, 4);      // 732915
-rotateRightmostDigits(735291, 5);      // 752913
-rotateRightmostDigits(735291, 6);      // 352917
+console.log(rotateRightmostDigits(735291, 1));      // 735291
+console.log(rotateRightmostDigits(735291, 2));      // 735219
+console.log(rotateRightmostDigits(735291, 3));      // 735912
+console.log(rotateRightmostDigits(735291, 4));      // 732915
+console.log(rotateRightmostDigits(735291, 5));      // 752913
+console.log(rotateRightmostDigits(735291, 6));      // 352917

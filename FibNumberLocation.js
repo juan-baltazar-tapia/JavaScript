@@ -16,13 +16,10 @@ function findFibonacciIndexByLength(number){
     let index = 2n;
     let fibNew = 1n;
     while (fibNew.toString().length < number){
-        // console.log(`length: ${fibNew.toString().length }`)
         fibNew = fib1 + fib2;
         fib1 = fib2;
         fib2 = fibNew;
         index += 1n;
-        // console.log(`FibNew: ${fibNew}`)
-        // console.log(`index: ${index}`)
     }
     return index;
 }

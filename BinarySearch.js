@@ -4,14 +4,12 @@ let yellowPages = ['Apple Store', 'Bags Galore', 'Bike Store', 'Donuts R Us', 'E
 
 function binarySearch(array, item){
     let l = 0, r = array.length;
-    while (l < r){
-        // 1, 5, 7, 11, 23
-
+    while (l <= r){
         const middle = Math.floor((l + r) / 2);
         if (array[middle] === item){
             return middle;
         } else if (array[middle] > item){
-            r = middle;
+            r = middle - 1;
         } else {
             l = middle + 1;
         }
